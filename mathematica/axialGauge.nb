@@ -1,0 +1,36 @@
+(*Construct the Hamiltoinian up to d=12 in the axial gauge*)
+ts = {{1, 0}, {0, 1}};
+al[1] = {{0, 1}, {1, 0}};
+Clear[ti, ph, sp];
+Do[ti = ArrayFlatten[TensorProduct[IdentityMatrix[2^(k - 2)], ts]];
+  Do[sdt = Reverse[IntegerDigits[kk - 1, 2, k - 1]];
+   pha = Sum[sdt[[ll]]*sp[k, ll], {ll, 1, k - 1}];
+   ti[[kk, kk]] = Exp[I*ph*pha];, {kk, 2, 2^(k - 1)}];
+  al[k] = 
+   ArrayFlatten[{{al[k - 1], ti}, {ti /. {ph -> -ph}, 
+      al[k - 1]}}];, {k, 2, 12}];
+      
+
+(*Compute eigenvalues in a symmetry block*)
+ph = 1.5*Pi/2;
+n = 12;
+ltran = IntegerDigits[2^n - 1, 2, n];
+file = OpenAppend[
+   "/home/yiyang/Desktop/ParisiModel/n=12phi=0.75Pi.txt"];
+Do[
+ Do[Do[sp[i, j] = RandomChoice[{-1, 1}], {j, 1, i - 1}], {i, 2, n}];
+ magTran = ConstantArray[0, {2^n, 2^n}];
+ Do[magTran[[x + 1, 
+    FromDigits[Mod[IntegerDigits[x, 2, n] + ltran, 2], 2] + 1]] = 
+   Exp[-I ph Sum[
+      Sum[sp[k, j] Reverse[ltran][[
+         j]] Reverse[IntegerDigits[x, 2, n]][[k]], {j, 1, k - 1}], {k,
+        2, n}]], {x, 0, 2^n - 1}];
+ symmop = 
+  magTran*Exp[I Sum[Sum[ph sp[i, j], {j, i - 1}]/2, {i, 2, n}]];
+ ev = DeleteCases[
+   Chop[Eigenvalues[al[n].(IdentityMatrix[2^n] + symmop)/2]], 0];
+ WriteString[file, "\n"];
+ Export[file, ev];
+ If[Mod[w, 10] == 0, Print[w]], {w, 1, 100}]
+Close[file];

@@ -1,0 +1,49 @@
+Command example:  bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "hamiSymGauge14to260p3Pi2relsseed2001""
+
+
+0.1Pi d=14-26   seeds:  0 (10 realizations) 
+      d=27      seeds:  0 (10 realizations) =
+------------------------------------------------------------------------
+0.2Pi d=14-26   seeds:  0 (10 realizations, take first 5) 
+                        31 (5 realizations) 
+      d=27      seeds:  0 (5 realizations) 
+                        31 (5 realizations) 
+------------------------------------------------------------------------
+0.3Pi d=14-26   seeds:  0 (2 realizations)  (got 3, take 2)
+                        31 (3 realizations) 
+                        129 (1 realizations)  (got 2, take 1)
+                        2001 (2 realizations) 
+                        4954 (1 realization)  
+                        7902 (1 realization) 
+
+
+       d=27     seeds:  0 (2 realizations)  (tried 3 rels, exited at 2 rels)
+                        31 (3 realizations)  
+                        129 (1 realizations)   
+                        2001 (2 realizations) 
+                        4954 (1 realization)  
+                        7902 (1 realization) 
+
+
+------------------------------------------------------------------------
+0.4Pi d=14-26   seeds:  0 ( 2 realizations) (got 3 take 2)
+                        31 (1 realizations)  (tried to get 3)
+                        129 (1 realizations)   (got 2, take 1)
+                        2001 (1 realizations)  (tried to get 2)
+                        4954 (1 realization)   
+                        6899 (1 realization)  
+                        7902 (1 realization) 
+                        29994 (1 realization) 
+                        78065 (1 realization) 
+
+		
+       d=27     seeds:  0 (2 realizations)  (tried 3, got 2)
+                        31 (1 realizations)  
+                        129 (1 realizations)  
+                        2001 (1 realizations) 
+                        4954 (1 realization) 
+                        6899 (1 realization) 
+                        7902 (1 realization) 
+                        29994 (1 realization)  
+                        78065 (1 realization) 
+

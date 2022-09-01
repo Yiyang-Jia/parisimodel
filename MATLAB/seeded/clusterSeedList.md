@@ -2,13 +2,15 @@ Command example:  bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "ham
 
 
 0.1Pi d=14-26   seeds:  0 (10 realizations) 
-      d=27      seeds:  0 (10 realizations) =
-------------------------------------------------------------------------
+      d=27      seeds:  0 (10 realizations) 
+
+
 0.2Pi d=14-26   seeds:  0 (10 realizations, take first 5) 
                         31 (5 realizations) 
       d=27      seeds:  0 (5 realizations) 
                         31 (5 realizations) 
-------------------------------------------------------------------------
+
+
 0.3Pi d=14-26   seeds:  0 (2 realizations)  (got 3, take 2)
                         31 (3 realizations) 
                         129 (1 realizations)  (got 2, take 1)
@@ -25,7 +27,7 @@ Command example:  bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "ham
                         7902 (1 realization) 
 
 
-------------------------------------------------------------------------
+
 0.4Pi d=14-26   seeds:  0 ( 2 realizations) (got 3 take 2)
                         31 (1 realizations)  (tried to get 3)
                         129 (1 realizations)   (got 2, take 1)

@@ -37,9 +37,7 @@ sigList = cell(1,d);
 ev=eigs(hami,4);
 ev=ev(ev>0)
 
-%tic
-%[vec,lambda]=lobpcg(rand(2^d,2),hami);
-%lambda
+
 
 %fprintf(fileID,'%.10f\n', ev);
 %fprintf(fileID2,'%.10f\n', ev);

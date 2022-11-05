@@ -1,5 +1,9 @@
-Command example:  bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "hamiSymGauge14to260p3Pi2relsseed2001""
-
+Command example:  
+module load matlab
+bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "hamiSymGauge14to260p3Pi2relsseed2001""
+bjobs
+bkill
+bqueues
 --------------------------------------------------------------------------------
 0.1Pi d=14-26   seeds:  0 (10 realizations) 
       d=27      seeds:  0 (10 realizations) 

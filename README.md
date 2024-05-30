@@ -1,5 +1,6 @@
-# parisimodel
-Codes used in the following papers (arxiv numbers):
+# Parisi model: a very general class of model characterized by large amount of random and uniform static fluxes in Fock spaces
+
+The codes were used in the following papers (arxiv numbers):
 
 2005.13017
 

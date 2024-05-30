@@ -1,4 +1,4 @@
-# Parisi model: a very general class of model characterized by a large amount of random and uniform static fluxes in Fock spaces
+# Parisi model: a very general class of model characterized by a large amount of random and uniform static fluxes (Berry curvatures) in Fock spaces.
 
 The codes were used in the following papers (arxiv numbers):
 

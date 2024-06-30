@@ -1,4 +1,4 @@
-Command example:  
+LSF command examples:  
 module load matlab
 bsub -q new-medium -R "rusage[mem=220000]" "matlab -batch "hamiSymGauge14to260p3Pi2relsseed2001""
 bjobs
